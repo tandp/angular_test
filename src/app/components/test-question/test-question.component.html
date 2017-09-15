@@ -1,0 +1,19 @@
+<main class="tp-page__main tp-content">
+  <div class="tp-test is--center">
+    <div class="tp-test__name" [innerHtml]="title"></div>
+    <div class="tp-test__counter">{{currentStep+1}}/{{questions.length}}</div>
+    <div class="tp-test__question">
+      <img *ngIf="currentQuestion.image" [src]="currentQuestion.image" alt="currentQuestion.content">
+      <p [innerHtml]="currentQuestion.content"></p>
+    </div>
+    <div class="tp-test__answers is--checked">
+      <label *ngFor="let answer of currentQuestion.answers; let i = index" (click)="addAnswer(answer, i)" [ngClass]="{'tp-answer': true, 'is--success': showResult && isRight && (i == numberAnswer), 'is--error': showResult && !isRight && (i == numberAnswer)}">
+        <input class="tp-answer__checker" type="radio">
+        <div class="tp-answer__name">{{answer.content}}</div>
+      </label>
+    </div>
+    <div *ngIf="showResult" [ngClass]="{'tp-test__info': true, 'tp-test__info--success': isRight, 'tp-test__info--error': !isRight}" class="tp-test__info">
+      {{result}}
+    </div>
+    <button class="tp-button" [disabled]="this.numberAnswer < 0" (click)="nextQuestion()">Далее</button></div>
+</main>

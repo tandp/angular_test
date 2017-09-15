@@ -1,0 +1,339 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+.h1 {
+  font-weight: 500;
+  font-family: inherit;
+}
+.h2 {
+  font-weight: 500;
+  font-family: inherit;
+}
+.h3 {
+  font-weight: 500;
+  font-family: inherit;
+}
+.h4 {
+  font-weight: 500;
+  font-family: inherit;
+}
+.h5 {
+  font-weight: 500;
+  font-family: inherit;
+}
+.h6 {
+  font-weight: 500;
+  font-family: inherit;
+}
+img {
+  border: 0;
+}
+.is--center {
+  text-align: center;
+}
+.tp-button {
+  display: inline-block;
+  padding: 12px 45px;
+  border: 1px solid #000;
+  background: none;
+  font-size: 17px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+.tp-button:hover {
+  cursor: pointer;
+}
+.tp-header {
+  padding: 40px 40px 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-height: 165px;
+}
+@media (max-width: 768px) {
+  .tp-header {
+    padding: 30px 0;
+  }
+}
+@media (max-width: 768px) {
+  .tp-sticker img {
+    width: 60px;
+  }
+}
+.ua {
+  font-size: 62.5%;
+}
+.tp-page {
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  line-height: 1.45;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+@media (max-width: 768px) {
+  .tp-page {
+    padding: 0 20px;
+  }
+}
+.tp-content {
+  max-width: 900px;
+  width: 100%;
+  margin: -40px auto 100px;
+  padding: 30px 50px;
+  background-color: rgba(255,255,255,0.9);
+}
+@media (max-width: 768px) {
+  .tp-content {
+    margin-top: 0;
+    padding: 25px 20px;
+  }
+}
+.tp-content__title {
+  font-size: 34px;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-weight: 600;
+  margin: 10px 0 30px;
+}
+@media (max-width: 768px) {
+  .tp-content__title {
+    font-size: 22px;
+  }
+}
+.tp-content__description {
+  font-size: 14px;
+}
+.tp-content__description .tp-button {
+  margin: 40px 0 5px;
+}
+@media (max-width: 768px) {
+  .tp-content__description .tp-button {
+    margin-top: 20px;
+  }
+}
+.tp-content a {
+  color: #000;
+}
+.tp-content a:hover {
+  text-decoration: none;
+}
+.tp-social {
+  margin: 25px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.tp-social__link {
+  margin: 0 12px;
+}
+.tp-test__name {
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .tp-test__name {
+    font-size: 14px;
+  }
+}
+.tp-test__counter {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: normal;
+  margin: 10px 0;
+  font-family: 'PT Sans Caption', sans-serif;
+}
+@media (max-width: 768px) {
+  .tp-test__counter {
+    font-size: 22px;
+  }
+}
+.tp-test__question {
+  padding: 10px 0;
+  font-size: 16px;
+}
+.tp-test__question p {
+  margin-top: 0;
+}
+.tp-test__question img {
+  max-width: 100%;
+}
+.tp-test__answers {
+  margin: 20px 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.tp-test__answers--media {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+@media (max-width: 768px) {
+  .tp-test__answers {
+    margin: 10px 0 20px;
+    display: block;
+  }
+}
+.tp-test__info {
+  font-size: 15px;
+  padding: 7px 40px;
+}
+.tp-test__info--success {
+  background-color: #dbffe7;
+}
+.tp-test__info--error {
+  background-color: #f9b1b1;
+}
+.tp-test__result {
+  margin: 10px 0 0;
+}
+@media (max-width: 768px) {
+  .tp-test__result {
+    width: calc(100% + 70px);
+    margin-left: -35px;
+  }
+}
+.tp-test__result img {
+  max-width: 100%;
+}
+.tp-test__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .tp-test__footer {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+.tp-test__footer .tp-button {
+  margin: 0;
+}
+.tp-test__footer .tp-social {
+  margin: 0;
+  display: block;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .tp-test__footer .tp-social {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}
+.tp-test__footer .tp-social__link {
+  margin: 10px 10px 0 0;
+  display: inline-block;
+}
+.tp-answer {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  color: #000;
+  position: relative;
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+}
+.is--checked .tp-answer {
+  opacity: 0.9;
+}
+@media (max-width: 768px) {
+  .tp-answer {
+    width: 100%;
+    padding: 10px 20px;
+  }
+}
+.tp-answer::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  transition: border 0.3s ease;
+}
+.tp-answer:hover:after {
+  border-width: 8px;
+}
+.tp-answer__checker {
+  visibility: hidden;
+}
+.tp-answer.is--success {
+  opacity: 1;
+  color: #11b120;
+}
+.tp-answer.is--success:hover:after {
+  border-width: 1px;
+}
+.tp-answer.is--success:after {
+  background-image: url("./../assets/img/success.png");
+}
+.tp-answer.is--error {
+  opacity: 1;
+  color: #cc2626;
+}
+.tp-answer.is--error:hover:after {
+  border-width: 1px;
+}
+.tp-answer.is--error:after {
+  background-image: url("./../assets/img/error.png");
+  background-size: 60%;
+}
+.tp-answer__name {
+  font-size: 16px;
+  padding-left: 20px;
+  text-align: left;
+}
+.tp-media-answer {
+  width: 50%;
+  padding: 0 15px 10px 15px;
+}
+.is--checked .tp-media-answer img {
+  opacity: 0.5;
+}
+@media (max-width: 768px) {
+  .tp-media-answer {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.tp-media-answer img {
+  max-width: 100%;
+}
+.tp-media-answer.is--success img {
+  opacity: 1;
+  border: 8px solid #11b120;
+}
+.tp-media-answer.is--error img {
+  opacity: 1;
+  border: 8px solid #cc2626;
+}

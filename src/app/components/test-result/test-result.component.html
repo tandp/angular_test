@@ -1,0 +1,24 @@
+<main class="tp-page__main tp-content">
+  <div class="tp-test is--center">
+    <div class="tp-test__name" [innerHtml]="title"></div>
+    <div class="tp-test__result"><img [src]="currentResult().image"></div>
+    <div class="tp-test__question">
+      <p [innerHtml]="currentResult().content"></p>
+    </div>
+    <div class="tp-test__footer">
+      <div class="tp-social">
+        <div>Поделиться результатом:</div>
+        <a class="tp-social__link" (click)="share('vk')">
+          <img src="assets/img/vk--circle.png" alt="we in vk" width="33">
+        </a>
+        <a class="tp-social__link" (click)="share('tw')">
+          <img src="assets/img/tw--circle.png" alt="we in tw" width="33">
+        </a>
+        <a class="tp-social__link" (click)="share('fb')">
+          <img src="assets/img/fb--circle.png" alt="we in fb" width="33">
+        </a>
+      </div>
+      <button (click)="restart()" class="tp-button">Пройти еще раз</button>
+    </div>
+  </div>
+</main>
