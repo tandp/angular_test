@@ -3,7 +3,8 @@
     <div class="tp-test__name" [innerHtml]="title"></div>
     <div class="tp-test__result"><img [src]="currentResult().image"></div>
     <div class="tp-test__question">
-      <p [innerHtml]="currentResult().content"></p>
+      <h1 class="tp-content__title is--center" [innerHtml]="currentResult().content"></h1>
+      <div class="tp-content__description is--center" [innerHtml]="currentResult().description"></div>
     </div>
     <div class="tp-test__footer">
       <div class="tp-social">
