@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   public questions:any = {};
   public results:any = {};
   public completion:string;
+  public sharedCompletion:string;
   private _show_intro = true;
   private _show_question = false;
   private _show_result = false;
@@ -48,6 +49,7 @@ export class HomeComponent implements OnInit {
     this.bg2 = data['test']['bg2'];
     this.bg3 = data['test']['bg3'];
     this.completion = data['test']['completion'];
+    this.sharedCompletion = data['test']['shared_completion'];
     this.slug = data['test']['slug'];
     if (this.route.snapshot.paramMap.get('result')) {
       this.processResult([data['test']['score']])

@@ -26,9 +26,11 @@ export class TestResultComponent implements OnInit {
   @Input() result: number = 0;
   @Input() results: any;
   @Input() completion:string;
+  @Input() sharedCompletion:string;
   @Input() slug:string;
   @Input() routesBase:string;
   @Output() restartTest = new EventEmitter<boolean>();
+  completionSaved:boolean;
 
   constructor(
     private winRef: WindowRef,
@@ -58,9 +60,9 @@ export class TestResultComponent implements OnInit {
 
   public share(sn: string): void {
     let share = { //
-      "vk": 'http://vk.com/share.php?url=' + this.getHostName() + '/results/' + this.completion,
-      "fb": 'https://www.facebook.com/sharer/sharer.php?u=' + this.getHostName() + '/results/' + this.completion,
-      "tw": 'https://twitter.com/intent/tweet?url=' + this.getHostName() + '/results/' + this.completion,
+      "vk": 'http://vk.com/share.php?url=' + this.getHostName() + '/results/' + this.completionForShare(),
+      "fb": 'https://www.facebook.com/sharer/sharer.php?u=' + this.getHostName() + '/results/' + this.completionForShare(),
+      "tw": 'https://twitter.com/intent/tweet?url=' + this.getHostName() + '/results/' + this.completionForShare(),
     };
     if (typeof share[sn] !== 'undefined') {
       let newWindow = this.nativeWindow.open(share[sn]);
@@ -73,6 +75,14 @@ export class TestResultComponent implements OnInit {
     return {}
   }
 
+  public completionForShare():string {
+    if (this.sharedCompletion && !this.nativeWindow.completionSaved) {
+      return this.sharedCompletion;
+    } else {
+      return this.completion;
+    }
+  }
+
   private csrfToken():string {
     return document.head.querySelector("[name='csrf-token']").getAttribute('content');
   }
@@ -83,6 +93,8 @@ export class TestResultComponent implements OnInit {
     headers.append("Content-Type", 'application/json');
     headers.append("Accept", 'application/json, text/javascript, */*; q=0.01');
     headers.append("X-Requested-With", 'XMLHttpRequest');
+
+    this.nativeWindow.completionSaved = true;
 
     let options = new RequestOptions({headers: headers});
     this.http.post("/questionnaires/" + this.slug + "/completion",
