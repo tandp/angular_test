@@ -9,4 +9,4 @@
 
 <test-intro *ngIf="showIntro" (startTest)="showQuestions($event)" [title]="title" [description]="description" [routesBase]="routesBase"></test-intro>
 <test-question *ngIf="showQuestion" (finalResults)="processResult($event)" [title]="title" [questions]="questions"></test-question>
-<test-result *ngIf="showResult" (restartTest)="restartTest($event)" [title]="title" [results]="results" [result]="result" [completion]="completion" [slug]="slug" [routesBase]="routesBase"></test-result>
+<test-result *ngIf="showResult" (restartTest)="restartTest($event)" [title]="title" [results]="results" [result]="result" [completion]="completion" [sharedCompletion]="sharedCompletion" [slug]="slug" [routesBase]="routesBase"></test-result>
