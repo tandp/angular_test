@@ -12,7 +12,7 @@
         <div class="tp-answer__name">{{answer.content}}</div>
       </label>
     </div>
-    <div *ngIf="showResult" [ngClass]="{'tp-test__info': true, 'tp-test__info--success': isRight, 'tp-test__info--error': !isRight}" class="tp-test__info">
+    <div *ngIf="showResult && result" [ngClass]="{'tp-test__info': true, 'tp-test__info--success': isRight, 'tp-test__info--error': !isRight}" class="tp-test__info">
       {{result}}
     </div>
     <button class="tp-button" [disabled]="this.numberAnswer < 0" (click)="nextQuestion()">Далее</button></div>
