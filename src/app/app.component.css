@@ -119,6 +119,7 @@ img {
 }
 .tp-content a {
   color: #000;
+  text-decoration: underline;
 }
 .tp-content a:hover {
   text-decoration: none;
