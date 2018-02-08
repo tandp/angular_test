@@ -2,8 +2,10 @@
   <div class="tp-test is--center">
     <div class="tp-test__name" [innerHtml]="title"></div>
     <div class="tp-test__counter">{{currentStep+1}}/{{questions.length}}</div>
-    <div class="tp-test__question">
+    <div class="tp-test__question tp-test__question-image">
       <img *ngIf="currentQuestion.image" [src]="currentQuestion.image" alt="currentQuestion.content">
+    </div>
+    <div class="tp-test__question tp-test__question-text">
       <p [innerHtml]="currentQuestion.content"></p>
     </div>
     <div class="tp-test__answers is--checked">

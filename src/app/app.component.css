@@ -163,6 +163,12 @@ img {
   padding: 10px 0;
   font-size: 16px;
 }
+.tp-test__question-image {
+  padding: 10px 0 0 0;
+}
+.tp-test__question-text {
+  padding: 0 0 10px 0;
+}
 .tp-test__question p {
   margin-top: 0;
 }
