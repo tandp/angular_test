@@ -154,6 +154,9 @@ img {
   margin: 10px 0;
   font-family: 'PT Sans Caption', sans-serif;
 }
+.tp-test__counter-second {
+  display: none;
+}
 @media (max-width: 768px) {
   .tp-test__counter {
     font-size: 22px;
