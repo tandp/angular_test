@@ -28,7 +28,8 @@ export class TestQuestionComponent implements OnInit {
 
   public ngOnInit() {
     // Shuffle order of answers
-    this.questions.map(question => {question.answers = this.shuffle(question.answers)});
+    // Shuffle on server now!
+    // this.questions.map(question => {question.answers = this.shuffle(question.answers)});
   }
 
   /**
