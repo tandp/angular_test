@@ -77,11 +77,11 @@ img {
   padding: 0;
   color: #000;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .tp-page {
     padding: 0 20px;
   }
-}
+} */
 .tp-content {
   max-width: 900px;
   width: 100%;
