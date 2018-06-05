@@ -51,6 +51,7 @@ export class TestResultComponent implements OnInit {
 
   restart() {
     this.restartTest.emit(true);
+    document.dispatchEvent(new CustomEvent('reload:banners'));
   }
 
   private getHostName():string {

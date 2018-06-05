@@ -1,18 +1,21 @@
 <main class="tp-page__main tp-content">
-  <h1 class="tp-content__title is--center" [innerHtml]="title"></h1>
-  <div class="tp-content__description is--center">
-    <p [innerHtml]="description"></p>
-    <button (click)="start()" class="tp-button">Начать тест</button>
+  <div class="tp-content__inner">
+    <h1 class="tp-content__title is--center" [innerHtml]="title"></h1>
+    <div class="tp-content__description is--center">
+      <p [innerHtml]="description"></p>
+      <button (click)="start()" class="tp-button">Начать тест</button>
+    </div>
+    <div class="tp-social">
+      <a (click)="share('fb')" class="tp-social__link">
+        <img src="assets/img/fb.png" alt="share in fb" width="10" />
+      </a>
+      <a (click)="share('vk')" class="tp-social__link">
+        <img src="assets/img/vk.png" alt="share in vk" width="20" />
+      </a>
+      <a (click)="share('tw')" class="tp-social__link">
+        <img src="assets/img/tw.png" alt="share in tw" width="17" />
+      </a>
+    </div>
   </div>
-  <div class="tp-social">
-    <a (click)="share('fb')" class="tp-social__link">
-      <img src="assets/img/fb.png" alt="share in fb" width="10"/>
-    </a>
-    <a (click)="share('vk')" class="tp-social__link">
-      <img src="assets/img/vk.png" alt="share in vk" width="20"/>
-    </a>
-    <a (click)="share('tw')" class="tp-social__link">
-      <img src="assets/img/tw.png" alt="share in tw" width="17"/>
-    </a>
-  </div>
+  <div class="tp-content__banner ad-fox-banner-adaptive banner_sidebar banner-300x500-center banner-300x500-center-sidebar" data-params='{"pp":"g","ps":"cigk","p2":"fkbj"}' data-states='["desktop"]' id="adfox_banner_sidebar"></div>
 </main>
