@@ -14,9 +14,7 @@
           <div class="tp-answer__name">{{answer.content}}</div>
         </label>
       </div>
-      <div *ngIf="showResult && result" [ngClass]="{'tp-test__info': true, 'tp-test__info--success': isRight, 'tp-test__info--error': !isRight}" class="tp-test__info">
-        {{result}}
-      </div>
+      <div *ngIf="showResult && result" [innerHTML]="result" [ngClass]="{'tp-test__info': true, 'tp-test__info--success': isRight, 'tp-test__info--error': !isRight}" class="tp-test__info"></div>
       <button class="tp-button" [disabled]="this.numberAnswer < 0" (click)="nextQuestion()">Далее</button></div>
     </div>
 </main>

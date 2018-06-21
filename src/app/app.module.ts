@@ -15,7 +15,6 @@ import {
   RouterModule,
   PreloadAllModules
 } from '@angular/router';
-
 /*
  * Platform and Environment providers/directives/pipes
  */
