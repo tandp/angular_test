@@ -11,7 +11,7 @@
       <div class="tp-test__answers is--checked">
         <label *ngFor="let answer of currentQuestion.answers; let i = index" (click)="addAnswer(answer, i)" [ngClass]="{'tp-answer': true, 'is--success': showResult && isRight && (i == numberAnswer), 'is--error': showResult && !isRight && (i == numberAnswer)}">
           <input class="tp-answer__checker" type="radio">
-          <div class="tp-answer__name">{{answer.content}}</div>
+          <div class="tp-answer__name" [innerHtml]="answer.content"></div>
         </label>
       </div>
       <div *ngIf="showResult && result" [innerHTML]="result" [ngClass]="{'tp-test__info': true, 'tp-test__info--success': isRight, 'tp-test__info--error': !isRight}" class="tp-test__info"></div>
