@@ -61,9 +61,9 @@ export class TestResultComponent implements OnInit {
 
   public share(sn: string): void {
     let share = { //
-      "vk": 'http://vk.com/share.php?url=' + this.getHostName() + '/results/' + this.completionForShare(),
-      "fb": 'https://www.facebook.com/sharer/sharer.php?u=' + this.getHostName() + '/results/' + this.completionForShare(),
-      "tw": 'https://twitter.com/intent/tweet?url=' + this.getHostName() + '/results/' + this.completionForShare(),
+      "vk": 'http://vk.com/share.php?url=' + this.getHostName() + '?share=' + this.completionForShare(),
+      "fb": 'https://www.facebook.com/sharer/sharer.php?u=' + this.getHostName() + '?share=' + this.completionForShare(),
+      "tw": 'https://twitter.com/intent/tweet?url=' + this.getHostName() + '?share=' + this.completionForShare(),
     };
     if (typeof share[sn] !== 'undefined') {
       let newWindow = this.nativeWindow.open(share[sn]);
