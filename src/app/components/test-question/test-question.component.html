@@ -4,6 +4,7 @@
     <div class="tp-test__counter">{{currentStep+1}}/{{questions.length}}</div>
     <div class="tp-test__question tp-test__question-image tp-test__question-item">
       <img *ngIf="currentQuestion.image" [src]="currentQuestion.image" alt="currentQuestion.content">
+      <audio *ngIf="currentQuestion.sound" [src]="currentQuestion.sound" class="tp-test__question-sound" controls="controls" type="audio/mp3"></audio>
     </div>
     <div class="tp-test__question-and-answers tp-test__question-item">
       <div class="tp-test__counter tp-test__counter-second">{{currentStep+1}}/{{questions.length}}</div>

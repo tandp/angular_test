@@ -167,7 +167,18 @@ img {
   font-size: 16px;
 }
 .tp-test__question-image {
+  position: relative;
   padding: 10px 0 0 0;
+}
+.tp-test__question-sound {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 1;
 }
 .tp-test__question-text {
   padding: 0 0 10px 0;
