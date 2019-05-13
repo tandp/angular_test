@@ -1,11 +1,11 @@
 {
   "core-js": {
     "bundle": "polyfills",
-    "version": "2.5.0"
+    "version": "2.5.1"
   },
   "zone.js": {
     "bundle": "polyfills",
-    "version": "0.8.16"
+    "version": "0.8.17"
   },
   "@angular/platform-browser": {
     "bundle": "vendor",
@@ -17,7 +17,7 @@
   },
   "@angular/core": {
     "bundle": "vendor",
-    "version": "4.3.4"
+    "version": "4.3.6"
   },
   "@angular/common": {
     "bundle": "vendor",

@@ -25,7 +25,20 @@ export class TestIntroComponent implements OnInit {
     this.nativeWindow = winRef.getNativeWindow();
   }
 
-  public ngOnInit() {}
+  public ngOnInit() {
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', '159050454558546'));
+
+    document.getElementById('vk_share_button').innerHTML = VK.Share.button(false, {
+      type: "round",
+      text: "Поделиться"
+    })
+  }
 
   start() {
     this.startTest.emit(true);

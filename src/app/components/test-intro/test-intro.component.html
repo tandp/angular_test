@@ -6,12 +6,12 @@
       <button (click)="start()" class="tp-button">Начать тест</button>
     </div>
     <div class="tp-social">
-      <a (click)="share('fb')" class="tp-social__link">
-        <img src="/justice/assets/img/fb.png" alt="share in fb" width="10" />
-      </a>
-      <a (click)="share('vk')" class="tp-social__link">
-        <img src="/justice/assets/img/vk.png" alt="share in vk" width="20" />
-      </a>
+      <span class="fb-share-button tp-social__link" data-href="#{object_url}" data-layout="button_count" data-size="small">
+        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
+          Поделиться
+        </a>
+      </span>
+     <span class="tp-social__link" id="vk_share_button"></span>
       <a (click)="share('tw')" class="tp-social__link">
         <img src="/justice/assets/img/tw.png" alt="share in tw" width="17" />
       </a>
