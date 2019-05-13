@@ -34,7 +34,7 @@ export class TestIntroComponent implements OnInit {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', '159050454558546'));
 
-    document.getElementById('vk_share_button').innerHTML = VK.Share.button(false, {
+    document.getElementById('vk_share_button').innerHTML = this.nativeWindow.VK.Share.button(false, {
       type: "round",
       text: "Поделиться"
     })
