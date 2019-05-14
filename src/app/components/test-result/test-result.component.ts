@@ -54,7 +54,7 @@ export class TestResultComponent implements OnInit {
     document.dispatchEvent(new CustomEvent('reload:banners'));
   }
 
-  private getHostName():string {
+  getHostName():string {
     let link = this.nativeWindow.location;
     return link.protocol + '//' + link.host + this.routesBase;
   }

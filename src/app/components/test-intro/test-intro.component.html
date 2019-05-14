@@ -6,7 +6,7 @@
       <button (click)="start()" class="tp-button">Начать тест</button>
     </div>
     <div class="tp-social">
-      <span class="fb-share-button tp-social__link" data-href="#{object_url}" data-layout="button_count" data-size="small">
+      <span class="fb-share-button tp-social__link"  [attr.data-href]="getHostName()" data-layout="button_count" data-size="small">
         <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
           Поделиться
         </a>

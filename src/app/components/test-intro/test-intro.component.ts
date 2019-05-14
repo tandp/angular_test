@@ -25,7 +25,9 @@ export class TestIntroComponent implements OnInit {
     this.nativeWindow = winRef.getNativeWindow();
   }
 
-  public ngOnInit() {
+  public ngOnInit() {}
+
+  public ngAfterViewChecked(): void {
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -44,7 +46,7 @@ export class TestIntroComponent implements OnInit {
     this.startTest.emit(true);
   }
 
-  private getHostName():string {
+  public getHostName():string {
     let link = this.nativeWindow.location;
     return link.protocol + '//' + link.host + this.routesBase;
   }
