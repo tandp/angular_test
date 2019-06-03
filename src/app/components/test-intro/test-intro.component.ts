@@ -28,13 +28,9 @@ export class TestIntroComponent implements OnInit {
   public ngOnInit() {}
 
   public ngAfterViewChecked(): void {
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.0";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', '159050454558546'));
+    if (typeof this.nativeWindow.FB !== "undefined" && this.nativeWindow.FB !== null) { // Instance of FacebookSDK
+      this.nativeWindow.FB.XFBML.parse();
+    }
 
     document.getElementById('vk_share_button').innerHTML = this.nativeWindow.VK.Share.button(false, {
       type: "round",

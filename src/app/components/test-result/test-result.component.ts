@@ -49,9 +49,24 @@ export class TestResultComponent implements OnInit {
     }
   }
 
+  public ngAfterViewChecked(): void {
+    if (typeof this.nativeWindow.FB !== "undefined" && this.nativeWindow.FB !== null) { // Instance of FacebookSDK
+      this.nativeWindow.FB.XFBML.parse();
+    }
+
+    document.getElementById('vk_share_button').innerHTML = this.nativeWindow.VK.Share.button(false, {
+      type: "round",
+      text: "Поделиться"
+    })
+  }
+
   restart() {
     this.restartTest.emit(true);
     document.dispatchEvent(new CustomEvent('reload:banners'));
+    // for reload facebook share widjet
+    if (typeof this.nativeWindow.FB !== "undefined" && this.nativeWindow.FB !== null) { // Instance of FacebookSDK
+      this.nativeWindow.FB.XFBML.parse();
+    }
   }
 
   getHostName():string {

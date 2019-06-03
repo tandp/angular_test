@@ -129,15 +129,18 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 .tp-social__link {
   margin: 0 12px;
+}
+.tp-social__link:first-child {
+  margin-left: 0;
 }
 .tp-test__name {
   font-weight: 400;
@@ -266,6 +269,7 @@ img {
 .tp-test__footer .tp-social__link {
   margin: 10px 10px 0 0;
   display: inline-block;
+  vertical-align: bottom;
 }
 .tp-answer {
   width: 50%;

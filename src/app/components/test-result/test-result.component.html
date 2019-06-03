@@ -1,23 +1,49 @@
 <main class="tp-page__main tp-content">
   <div class="tp-test is--center">
     <div class="tp-test__name" [innerHtml]="title"></div>
-    <div class="tp-test__result"><img [src]="currentResult().image"></div>
+    <div class="tp-test__result"><img [src]="currentResult().image" /></div>
     <div class="tp-test__question">
-      <h1 class="tp-content__title is--center" [innerHtml]="currentResult().content"></h1>
-      <div class="tp-content__description is--center" [innerHtml]="currentResult().description"></div>
+      <h1
+        class="tp-content__title is--center"
+        [innerHtml]="currentResult().content"
+      ></h1>
+      <div
+        class="tp-content__description is--center"
+        [innerHtml]="currentResult().description"
+      ></div>
     </div>
     <div class="tp-test__footer">
       <div class="tp-social">
         <div>Поделиться результатом:</div>
-        <a class="tp-social__link" (click)="share('vk')">
-          <img src="/justice/assets/img/vk--circle.png" alt="we in vk" width="33">
-        </a>
-        <a class="tp-social__link" (click)="share('tw')">
-          <img src="/justice/assets/img/tw--circle.png" alt="we in tw" width="33">
-        </a>
-        <a class="tp-social__link" (click)="share('fb')">
-          <img src="/justice/assets/img/fb--circle.png" alt="we in fb" width="33">
-        </a>
+
+        <div class="tp-social">
+          <span
+            class="fb-share-button tp-social__link"
+            [attr.data-href]="getHostName()"
+            data-layout="button_count"
+            data-size="small"
+          >
+            <a
+              class="fb-xfbml-parse-ignore"
+              target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+            >
+              Поделиться
+            </a>
+          </span>
+
+          <span class="tp-social__link">
+            <span id="vk_share_button"></span>
+          </span>
+
+          <a class="tp-social__link" (click)="share('tw')">
+            <img
+              src="/justice/assets/img/tw--circle.png"
+              alt="we in tw"
+              width="33"
+            />
+          </a>
+        </div>
       </div>
       <button (click)="restart()" class="tp-button">Пройти еще раз</button>
     </div>
