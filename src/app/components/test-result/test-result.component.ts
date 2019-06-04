@@ -9,6 +9,7 @@ import {
 import {WindowRef} from "../../services/window-ref/window-ref.service";
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import 'rxjs/add/operator/map';
 
 function getWindow(): any {
   return window;
@@ -31,6 +32,7 @@ export class TestResultComponent implements OnInit {
   @Input() routesBase:string;
   @Output() restartTest = new EventEmitter<boolean>();
   completionSaved:boolean;
+  vkShareCount:number = 0;
 
   constructor(
     private winRef: WindowRef,
@@ -47,26 +49,47 @@ export class TestResultComponent implements OnInit {
       this.router.navigateByUrl(this.routesBase + '/results/' + this.completion);
       getWindow().testData['test']['score'] = this.result;
     }
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({headers: headers});
+    this.http.get(`/sharing/count?url=${this.getHostName()}?share=${this.completionForShare()}`, options).
+    map(
+       (response) => response.json()
+    ).
+    subscribe(
+       (data) => {this.setVkShareCount(data)}
+    )
+  }
+
+  setVkShareCount(data) {
+    if (data) this.vkShareCount = data;
   }
 
   public ngAfterViewChecked(): void {
     if (typeof this.nativeWindow.FB !== "undefined" && this.nativeWindow.FB !== null) { // Instance of FacebookSDK
       this.nativeWindow.FB.XFBML.parse();
     }
+  }
 
-    document.getElementById('vk_share_button').innerHTML = this.nativeWindow.VK.Share.button(false, {
-      type: "round",
-      text: "Поделиться"
-    })
+  getVkShareUrl = () => `http://www.vk.com/share.php?url=${this.getHostName()}?share=${this.completionForShare()}`;
+
+  public shareVk(): void {
+    const url = this.getVkShareUrl();
+    const width = 640;
+    const height = 320;
+    const left = window.screen.width / 2 - width / 2;
+    const top = window.screen.height / 2 - height / 2;
+    window.open(url, "", `width=${width},height=${height},left=${left},top=${top},location=no,toolbar=no,menubar=no`);
+  };
+
+  public getVkShareCount():number  {
+    return this.vkShareCount;
   }
 
   restart() {
-    this.restartTest.emit(true);
-    document.dispatchEvent(new CustomEvent('reload:banners'));
-    // for reload facebook share widjet
-    if (typeof this.nativeWindow.FB !== "undefined" && this.nativeWindow.FB !== null) { // Instance of FacebookSDK
-      this.nativeWindow.FB.XFBML.parse();
-    }
+    // this.restartTest.emit(true);
+    window.location.href =  this.getHostName();
   }
 
   getHostName():string {
@@ -83,6 +106,10 @@ export class TestResultComponent implements OnInit {
     if (typeof share[sn] !== 'undefined') {
       let newWindow = this.nativeWindow.open(share[sn]);
     }
+  }
+
+  public shareHref():string {
+    return this.getHostName() + '?share=' + this.completionForShare()
   }
 
   public currentResult():any {

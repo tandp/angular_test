@@ -19,7 +19,7 @@
         <div class="tp-social">
           <span
             class="fb-share-button tp-social__link"
-            [attr.data-href]="getHostName()"
+            [attr.data-href]="shareHref()"
             data-layout="button_count"
             data-size="small"
           >
@@ -33,14 +33,17 @@
           </span>
 
           <span class="tp-social__link">
-            <span id="vk_share_button"></span>
+            <a (click)="shareVk()" class="share-link vk">
+              <i class="fa fa-vk"></i><span class="share-text">Поделиться</span
+              ><span class="share-count" [innerHTML]="getVkShareCount()">0</span></a
+            >
           </span>
 
           <a class="tp-social__link" (click)="share('tw')">
             <img
               src="/justice/assets/img/tw--circle.png"
               alt="we in tw"
-              width="33"
+              width="22"
             />
           </a>
         </div>
