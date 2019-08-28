@@ -43,14 +43,14 @@ export class TestIntroComponent implements OnInit {
   }
 
   setVkShareCount(data) {
-    if (data) this.vkShareCount = data;
+    if (data) this.vkShareCount = data.vk;
   }
 
-  public ngAfterViewChecked(): void {
-    if (typeof this.nativeWindow.FB !== "undefined" && this.nativeWindow.FB !== null) { // Instance of FacebookSDK
-      this.nativeWindow.FB.XFBML.parse();
-    }
-  }
+  // public ngAfterViewInit(): void {
+  //   if (typeof this.nativeWindow.FB !== "undefined" && this.nativeWindow.FB !== null) { // Instance of FacebookSDK
+  //     this.nativeWindow.FB.XFBML.parse();
+  //   }
+  // }
 
   getVkShareUrl = () => `http://www.vk.com/share.php?url=${this.getHostName()}`;
 

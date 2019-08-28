@@ -17,20 +17,7 @@
         <div>Поделиться результатом:</div>
 
         <div class="tp-social">
-          <span
-            class="fb-share-button tp-social__link"
-            [attr.data-href]="shareHref()"
-            data-layout="button_count"
-            data-size="small"
-          >
-            <a
-              class="fb-xfbml-parse-ignore"
-              target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-            >
-              Поделиться
-            </a>
-          </span>
+          <fb-like [url]="shareHref()"></fb-like>
 
           <span class="tp-social__link">
             <a (click)="shareVk()" class="share-link vk">

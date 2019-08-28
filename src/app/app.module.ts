@@ -15,6 +15,7 @@ import {
   RouterModule,
   PreloadAllModules
 } from '@angular/router';
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -29,6 +30,7 @@ import { NoContentComponent } from './no-content';
 import { TestIntroComponent } from "./components/test-intro";
 import { TestQuestionComponent } from "./components/test-question";
 import { TestResultComponent } from "./components/test-result";
+import { FbLikeComponent } from "./components/fb-like";
 
 import { WindowRef } from "./services/window-ref/window-ref.service";
 
@@ -53,6 +55,7 @@ type StoreType = {
     AppComponent,
     HomeComponent,
     NoContentComponent,
+    FbLikeComponent,
 
     TestIntroComponent,
     TestQuestionComponent,
