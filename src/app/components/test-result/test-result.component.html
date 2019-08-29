@@ -19,12 +19,7 @@
         <div class="tp-social">
           <fb-like [url]="shareHref()"></fb-like>
 
-          <span class="tp-social__link">
-            <a (click)="shareVk()" class="share-link vk">
-              <i class="fa fa-vk"></i><span class="share-text">Поделиться</span
-              ><span class="share-count" [innerHTML]="getVkShareCount()">0</span></a
-            >
-          </span>
+          <vk-share [url]="shareHref()" class="tp-social__link"></vk-share>
 
           <a class="tp-social__link" (click)="share('tw')">
             <img

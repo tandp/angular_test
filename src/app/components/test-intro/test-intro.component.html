@@ -9,12 +9,9 @@
     </div>
     <div class="tp-social">
       <fb-like [url]="getHostName()"></fb-like>
-      <span class="tp-social__link">
-        <a (click)="shareVk()" class="share-link vk">
-          <i class="fa fa-vk"></i><span class="share-text">Поделиться</span
-          ><span class="share-count" [innerHTML]="getVkShareCount()">0</span></a
-        >
-      </span>
+
+      <vk-share [url]="getHostName()" class="tp-social__link"></vk-share>
+
       <a (click)="share('tw')" class="tp-social__link">
         <img src="/justice/assets/img/tw.png" alt="share in tw" width="17" />
       </a>

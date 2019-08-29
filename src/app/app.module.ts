@@ -31,6 +31,7 @@ import { TestIntroComponent } from "./components/test-intro";
 import { TestQuestionComponent } from "./components/test-question";
 import { TestResultComponent } from "./components/test-result";
 import { FbLikeComponent } from "./components/fb-like";
+import { VkShareComponent } from "./components/vk-share";
 
 import { WindowRef } from "./services/window-ref/window-ref.service";
 
@@ -56,6 +57,7 @@ type StoreType = {
     HomeComponent,
     NoContentComponent,
     FbLikeComponent,
+    VkShareComponent,
 
     TestIntroComponent,
     TestQuestionComponent,
